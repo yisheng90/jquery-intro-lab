@@ -1,4 +1,4 @@
-# jQuery Quiz 1
+# jQuery Quiz
 
 The instructions for this lab are in index.html
 
