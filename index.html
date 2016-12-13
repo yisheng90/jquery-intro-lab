@@ -16,9 +16,10 @@
 
   <script>
     // Question 1 Answer:
+    $('h2:first').addClass('question-1')
 
   </script>
-  <div id = 'question-3'>
+  <div id = 'question-2'>
     <h2>Question 2</h2>
     <p>Use jQuery to add two more elements to the this UL:</p>
     <ul id = 'question-2-list'>
@@ -27,7 +28,8 @@
     </ul>
     <script>
       // Question 2 Answer:
-
+      $('ul#question-2-list').append('<li>Ducks</li>')
+      $('ul#question-2-list').append('<li>Chickens</li>')
     </script>
   </div>
 
@@ -36,7 +38,10 @@
     <p>Add a click event handler to this paragraph, which triggers a global method called 'alertClicked', which will display an alert with the text of "Question 3 Success".</p>
     <script>
       // Question 3 Answer:
-
+      $('#question-3 p').click(alertClicked)
+      function alertClicked() {
+        alert('Question 3 Success')
+      }
     </script>
   </div>
 
@@ -45,7 +50,12 @@
     <p>Make this paragraph's text fade out when you hover over it, and fade back in when you move your mouse elsewhere.</p>
     <script>
       // Question 4 Answer:
-
+      $('#question-4 p').hover(function() {
+        $(this).animate({opacity: 0})},
+      function() {
+        $(this).animate({opacity: 1})
+      }
+      )
     </script>
   </div>
 
@@ -55,7 +65,12 @@
     <input type='text' name='does-it-win' id='winning-box' />
     <script>
       // Question 5 Answer:
-
+    $('#winning-box').keypress(function (event) {
+      var answer = $(this).val()
+      if (answer === 'winning') {
+      $('#question-5 h2').css('color','blue')
+      }
+    })
     </script>
   </div>
 </body>
